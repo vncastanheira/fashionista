@@ -1,19 +1,30 @@
-﻿using Fashionista.Models.AppModels;
+﻿using Dapper;
+using Fashionista.Models.AppModels;
 
 namespace Fashionista.Services
 {
     public class ProductService
     {
-        public IEnumerable<ProductModel> Get(Guid? id = null)
+        private readonly AppDbConnection db;
+
+        public ProductService(AppDbConnection dbConnection)
         {
-            return new List<ProductModel>()
-            {
-                new ProductModel { ProductID = new Guid(), Name = ""},
-                new ProductModel { ProductID = new Guid(), Name = ""},
-                new ProductModel { ProductID = new Guid(), Name = ""},
-                new ProductModel { ProductID = new Guid(), Name = ""},
-                new ProductModel { ProductID = new Guid(), Name = ""},
-            };
+            db = dbConnection;
+        }
+
+        public async Task<IEnumerable<ProductModel>> Get(Guid? id = null)
+        {
+            string sql = @"
+                SELECT  ID, 
+                        NAME,
+                        PRICE,
+                        DESCRIPTION,
+                        CATEGORY,
+                        ONSALE,
+                        SEX
+                FROM PRODUCTS";
+
+            return await db.QueryAsync<ProductModel>(sql);
         }
     }
 }

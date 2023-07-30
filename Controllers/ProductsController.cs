@@ -16,9 +16,9 @@ namespace Fashionista.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<ProductModel> FetchAll()
+        public async Task<IEnumerable<ProductModel>> FetchAll()
         {
-            return _productService.Get();
+            return await _productService.Get();
         }
     }
 }

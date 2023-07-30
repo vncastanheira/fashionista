@@ -1,12 +1,13 @@
+using Fashionista;
 using Fashionista.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 var services = builder.Services;
 services.AddControllersWithViews();
 services.AddScoped<ProductService>();
+services.AddScoped<AppDbConnection>();
 
 var app = builder.Build();
 
@@ -20,7 +21,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
 
 app.MapControllerRoute(
     name: "default",

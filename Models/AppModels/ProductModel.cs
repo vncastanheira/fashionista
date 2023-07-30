@@ -2,9 +2,9 @@
 
 namespace Fashionista.Models.AppModels
 {
-    public class ProductModel
+    public class ProductModel : IModel
     {
-        public Guid ProductID { get; set; } = Guid.NewGuid();
+        public int ID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; } = 0M;
         public string Description { get; set; }

@@ -25,7 +25,7 @@ export class Home extends Component {
                     </thead>
                     <tbody>
                         {productList.map(product =>
-                            <tr key={product.productID}>
+                            <tr key={product.id}>
                                 <td>{product.name}</td>
                                 <td>{product.price}</td>
                             </tr>
