@@ -4,6 +4,7 @@
     {
         public int ID { get; set; }
         public int ProductID { get; set; }
+        public bool IsPrimary {get; set;}
         public byte ImageBlob { get; set; }
     }
 }
