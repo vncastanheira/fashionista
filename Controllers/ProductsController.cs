@@ -1,4 +1,6 @@
-﻿using Fashionista.Models.AppModels;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Fashionista.Models.AppModels;
 using Fashionista.Services;
 using Microsoft.AspNetCore.Mvc;
 
