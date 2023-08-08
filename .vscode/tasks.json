@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/AspCore_React_Sample.sln",
+                "${workspaceFolder}/Fashionista.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/AspCore_React_Sample.sln",
+                "${workspaceFolder}/Fashionista.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/AspCore_React_Sample.sln"
+                "${workspaceFolder}/Fashionista.sln"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -44,7 +44,7 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "aspcorereactsample:dev",
+                "tag": "fashionista:dev",
                 "target": "base",
                 "dockerfile": "${workspaceFolder}/Dockerfile",
                 "context": "${workspaceFolder}",

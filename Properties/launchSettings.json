@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "AspCore_React_Sample": {
+    "Fashionista": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

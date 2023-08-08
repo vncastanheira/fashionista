@@ -20,28 +20,24 @@ export default class App extends Component {
         element: <Layout />,
         children: [
           {
-            path: '',
+            path: 'home',
             element: <Home/ >
           },
           {
             path: 'admin',
-            element: <Admin />,
-            children: [
-              {
-                path: 'product/:id',
-                loader: productLoader,
-                element: <ProductAdminView />
-              }
-            ]
+            element: <Admin />
+          },
+          {
+            path: 'admin/product/:id',
+            loader: productLoader,
+            element: <ProductAdminView />
           }
         ]
       },
     ]);
 
     return(
-      <React.StrictMode>
         <RouterProvider router={router} />
-      </React.StrictMode>
     );
   }
 }

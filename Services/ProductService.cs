@@ -15,7 +15,7 @@ namespace Fashionista.Services
             db = dbConnection;
         }
 
-        public async Task<IEnumerable<ProductModel>> Get(Guid? id = null)
+        public async Task<IEnumerable<ProductModel>> GetAsync()
         {
             string sql = @"
                 SELECT  ID, 
@@ -28,6 +28,21 @@ namespace Fashionista.Services
                 FROM PRODUCTS";
 
             return await db.QueryAsync<ProductModel>(sql);
+        }
+
+        public async Task<ProductModel> GetAsync(int id){
+            string sql = @"
+                SELECT  ID, 
+                        NAME,
+                        PRICE,
+                        DESCRIPTION,
+                        CATEGORY,
+                        ONSALE,
+                        SEX
+                FROM PRODUCTS
+                WHERE ID = @ID";
+
+            return await db.QuerySingleOrDefaultAsync<ProductModel>(sql, new { ID = id });
         }
     }
 }

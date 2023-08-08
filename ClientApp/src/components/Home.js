@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getProducts } from '../services/product.service';
 
 export default class Home extends Component {
     static displayName = Home.name;
@@ -37,8 +38,7 @@ export default class Home extends Component {
     }
 
     async loadProducts() {
-        const response = await fetch('products');
-        const data = await response.json();
+        const data = await getProducts();
         this.setState({ products: data });
     }
 }
